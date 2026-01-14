@@ -35,15 +35,15 @@ describe('Cart Test', () => {
     cy.get('.shopping_cart_link').click();
     
     // Click checkout button
-    cy.get('.checkout_button').click();
+    cy.get('[data-test="checkout"]').click();
     
     // Fill in checkout information
-    cy.get('#first-name').type('John');
-    cy.get('#last-name').type('Doe');
-    cy.get('#postal-code').type('12345');
+    cy.get('[data-test="firstName"]').type('John');
+    cy.get('[data-test="lastName"]').type('Doe');
+    cy.get('[data-test="postalCode"]').type('12345');
     
     // Click continue button
-    cy.get('.continue').click();
+    cy.get('[data-test="continue"]').click();
     
     // Verify checkout step two page
     cy.url().should('include', '/checkout-step-two.html');
